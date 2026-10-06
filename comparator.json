@@ -1,0 +1,27 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "GSPalomar.two_factor",
+    "GSPalomar.three_factor",
+    "GSPalomar.four_factor_counterexample",
+    "GSPalomar.unitary_two_factor",
+    "GSPalomar.unitary_three_factor",
+    "GSPalomar.unitary_four_factor_counterexample",
+    "GSPalomar.real_cs_exhaustion",
+    "GSPalomar.unitary_cs_exhaustion",
+    "GSPalomar.rank_one_cone_singularity",
+    "GSPalomar.real_three_factor_singularity",
+    "GSPalomar.real_singular_point",
+    "GSPalomar.unitary_singular_point",
+    "GSPalomar.orthogonal_shared_geometry",
+    "GSPalomar.unitary_shared_geometry",
+    "GSPalomar.two_factor_rank_criterion",
+    "GSPalomar.orthogonal_shared_block_geodesic"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

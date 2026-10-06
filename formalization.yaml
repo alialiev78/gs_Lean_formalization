@@ -1,0 +1,156 @@
+version: v0.4
+project:
+  name: 'Structured orthogonal and unitary matrices: factorization, geometry and singularities'
+  description: Block-diagonal matrix factors interleaved with fixed coordinate permutations define low-parametric
+    matrix families. This formalization proves orthogonal-factor sufficiency for two and three real layers,
+    its complex unitary analogue, and explicit four-layer counterexamples over both fields. It establishes
+    an exact two-factor cell-rank criterion and real and unitary cosine-sine exhaustion for the (p,2,p)
+    shuffle family. Two-layer images with complete within-layer block sharing, arbitrary overlap and arbitrary
+    fixed carriers have a smooth atlas in the inherited matrix topology, an exact tangent image, a smooth
+    Frobenius projector, a whole-tangent-bundle Cayley retraction and smooth intrinsic gradient sections.
+    Shared orthogonal block exponential curves have normal ambient acceleration and constant Frobenius
+    speed under the no-off-diagonal-overlap condition. Three-layer (2,q,2) families have genuine topological
+    singularities for every real q >= 3 and for odd unitary q >= 3. The full supported proof library is
+    included; experimental special-unitary drafts and the explicitly listed remaining problems are not
+    claimed.
+  authors:
+  - Ali Aliev
+  responsible_maintainers:
+  - Ali Aliev
+  license: MIT
+classification:
+  arxiv:
+  - math.DG
+  - math.NA
+  - math.RA
+  msc2020:
+  - 15A23
+  - 15B10
+  - 53B21
+  - 57N35
+sources:
+- title: Riemannian Structure and Optimization for a Class of Low-Parametric Orthogonal Matrices
+  authors:
+  - Ali Aliev
+  - Maxim Rakhuba
+  id: arXiv:2609.27982
+  location: https://arxiv.org/abs/2609.27982
+  type: paper
+  relationship: formalizes
+  note: See docs/PAPER_COVERAGE.md for correspondence. The unitary results, stronger real singularity
+    range and detailed shared orbit/bundle constructions extend the source; no independent novelty claim
+    is made.
+status:
+  scope: The 16 statements named in comparator.json are the statement of record. All 370 supported O/U
+    modules remain in this substantive repository. The 36 experimental SU modules are excluded from the
+    supported build. Challenge contains intentional statement placeholders; they are never imported into
+    Solution or the supported library.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  build: All 370 supported modules built and 7534 safe kernel declarations audited on Lean 4.35.0-rc2,
+    including private and generated declarations; only the standard three axioms were found. Challenge
+    and Solution compiled.
+  comparator: All 16 selected statements and their complete definition closures matched using Lake.Check.compareAt;
+    Lake.Check.checkAxioms accepted their axiom dependencies. The Solution export passed Lean, NanoDa
+    and Con-Ron. The sandboxed CLI is blocked locally by unavailable nested user namespaces; run the supplied
+    GitHub Actions Comparator step before submission.
+  challenge_sorry_count: 16
+automation:
+  methods:
+  - method: agent
+    models:
+    - OpenAI ChatGPT
+    framework: ChatGPT
+    tool_setup: AI-assisted Lean proof development, porting and source review, with human direction and
+      editing.
+  notes: Historical model versions and resource costs were not recorded. Prompt transcripts are not required
+    to reproduce the proofs and are not included.
+fidelity:
+  divergences: The proofs use structured QR/RQ, explicit cosine-sine decompositions, horizontal slice
+    atlases, matrix calculus and local topological models. The real singularity result covers all q >=
+    3. Unitary topological nonmanifoldness is restricted to odd q. Unitary geometry is real differential
+    geometry. Complete physical blocks may be shared within layers; partial-block and cross-layer ties
+    are excluded. The comparator statements do not certify floating-point implementations, numerical experiments,
+    global optimization convergence, arbitrary-depth rectangular products, arbitrary-overlap geodesic
+    formulas or unfinished SU drafts.
+review:
+  status: agent-reviewed
+  reviewers:
+  - OpenAI ChatGPT
+  notes: Agent source and statement review, full supported-library build and axiom audit, statement/definition
+    comparison, and independent exported-proof checks. The local container cannot run the nested Comparator
+    sandbox; the CI configuration supplies that check. No independent human review or Palomar registration
+    is claimed. See BUILD_VERIFICATION.md.
+alignment:
+  namespace: GSPalomar
+  statements:
+  - source: Two-factor orthogonalization
+    lean: GSPalomar.two_factor
+    module: Solution
+    status: adapted
+  - source: Three-factor orthogonalization
+    lean: GSPalomar.three_factor
+    module: Solution
+    status: adapted
+  - source: Four-factor orthogonal counterexample
+    lean: GSPalomar.four_factor_counterexample
+    module: Solution
+    status: adapted
+  - source: Two-factor unitarization
+    lean: GSPalomar.unitary_two_factor
+    module: Solution
+    status: adapted
+  - source: Three-factor unitarization
+    lean: GSPalomar.unitary_three_factor
+    module: Solution
+    status: adapted
+  - source: Four-factor unitary counterexample
+    lean: GSPalomar.unitary_four_factor_counterexample
+    module: Solution
+    status: adapted
+  - source: Real cosine-sine scalar exhaustion
+    lean: GSPalomar.real_cs_exhaustion
+    module: Solution
+    status: adapted
+  - source: Unitary cosine-sine scalar exhaustion
+    lean: GSPalomar.unitary_cs_exhaustion
+    module: Solution
+    status: adapted
+  - source: Rank-one cone singularity with Euclidean factors
+    lean: GSPalomar.rank_one_cone_singularity
+    module: Solution
+    status: adapted
+  - source: Real three-factor singularity at nonzero-entry bases
+    lean: GSPalomar.real_three_factor_singularity
+    module: Solution
+    status: adapted
+  - source: Real singular points for every q >= 3
+    lean: GSPalomar.real_singular_point
+    module: Solution
+    status: adapted
+  - source: Unitary singular points for odd q >= 3
+    lean: GSPalomar.unitary_singular_point
+    module: Solution
+    status: adapted
+  - source: Orthogonal shared orbit geometry, tangent projection, retraction and gradients
+    lean: GSPalomar.orthogonal_shared_geometry
+    module: Solution
+    status: adapted
+  - source: Unitary shared orbit geometry, tangent projection, retraction and gradients
+    lean: GSPalomar.unitary_shared_geometry
+    module: Solution
+    status: adapted
+  - source: Exact two-factor cell-rank criterion
+    lean: GSPalomar.two_factor_rank_criterion
+    module: Solution
+    status: adapted
+  - source: Orthogonal shared block geodesics without off-diagonal overlap
+    lean: GSPalomar.orthogonal_shared_block_geodesic
+    module: Solution
+    status: adapted
+acknowledgements: Developed with assistance from OpenAI's ChatGPT. The proofs depend on Lean and mathlib.
+  Human authors and maintainers retain responsibility for the mathematical scope and submission.
